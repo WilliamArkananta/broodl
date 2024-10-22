@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Fugaz_One, Inter } from "next/font/google";
+import { Fugaz_One, Open_Sans } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const opensans = Open_Sans({
   subsets: ["latin"],
 });
 
@@ -29,14 +29,19 @@ export default function RootLayout({
       >
         Broodl
       </h1>
+      <div className="items-center justify-between">Placeholder</div>
     </header>
   );
-  const footer = <footer className="p-4 sm:p-8">footer</footer>;
+  const footer = (
+    <footer className="p-4 sm:p-8 grid place-items-center">
+      <p className={`${fugaz.className} text-indigo-500`}>created with love</p>
+    </footer>
+  );
 
   return (
     <html lang="en">
       <body
-        className={`w-full max-w-[1000px] mx-auto text-sm sm:text-base min-h-screen flex flex-col ${inter.className} text-slate-800`}
+        className={`w-full max-w-[1000px] mx-auto text-sm sm:text-base min-h-screen flex flex-col ${opensans.className} text-slate-800`}
       >
         {header}
         {children}
