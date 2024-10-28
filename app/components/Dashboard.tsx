@@ -23,9 +23,9 @@ function Dashboard() {
 
   return (
     <div className="flex flex-col flex-1 gap-8 sm:gap-12 md:gap-16">
-      <div className="grid grid-cols-3 bg-indigo-50 text-indigo-500">
+      <div className="grid grid-cols-3 bg-indigo-50 text-indigo-500 p-4 gap-4 ">
         {Object.entries(statuses).map(([key, value]) => (
-          <div key={key} className="p-4">
+          <div key={key} className="flex flex-col gap-1 sm:gap-2">
             <p className="font-medium uppercase text-xs sm:text-sm truncate">
               {key.replace("_", " ")}
             </p>
@@ -44,12 +44,12 @@ function Dashboard() {
         {moods.map((mood, index) => (
           <button
             key={index}
-            className={`lex flex-col items-center p-4 ${
+            className={`flex flex-col items-center p-4  rounded-lg purpleShadow duration-200 bg-indigo-50 hover:bg-indigo-100 text-center ${
               index === 4 ? "sm:col-span-2 md:col-span-1" : ""
             }`}
           >
-            <p>{mood.emoji}</p>
-            <p>{mood.mood}</p>
+            <p className="text-5xl sm:text-6xl md:text-7xl">{mood.emoji}</p>
+            <p className={` ${fugaz.className} text-indigo-500`}>{mood.mood}</p>
           </button>
         ))}
       </div>
