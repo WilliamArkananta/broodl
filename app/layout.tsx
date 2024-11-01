@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Fugaz_One, Open_Sans } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
 const opensans = Open_Sans({
   subsets: ["latin"],
@@ -24,11 +25,13 @@ export default function RootLayout({
 }>) {
   const header = (
     <header className="p-4 sm:p-8 flex items-center justify-between gap-4">
-      <h1
-        className={`${fugaz.className} font-fugaz text-base sm:text-lg textGradient`}
-      >
-        Broodl
-      </h1>
+      <Link href={'/'}>
+        <h1
+          className={`${fugaz.className} font-fugaz text-base sm:text-lg textGradient`}
+        >
+          Broodl
+        </h1>
+      </Link>
       <div className="items-center justify-between">Placeholder</div>
     </header>
   );
